@@ -148,7 +148,6 @@ model = LiteMIL(
 
 ## 📈 Training on Pre-extracted Features with Nested Cross-Validation
 
-
 ```bash
 # Train on breast cancer dataset with default settings
 python train.py --mil LiteMIL --dataset breast --mode chunked --epochs 1
