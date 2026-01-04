@@ -316,7 +316,7 @@ If you use LiteMIL pipeline in your research, please cite:
 ---
 
 ## 📜 License
-
+Copyright© 2025 Haitham Kussaibi
 This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details.
 
 ---
