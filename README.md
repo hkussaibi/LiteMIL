@@ -231,7 +231,7 @@ python predict.py --visualize --mil LiteMIL --dataset breast --checkpoint output
 
 ## Jupyter Notebook
 
-See [`Tutorial.ipynb`](tutorial.ipynb) for interactive examples including:
+See [`Tutorial.ipynb`](Tutorial.ipynb) for interactive examples including:
 - Custom dataset loading
 - Feature extraction from raw WSI
 - Model training and evaluation
