@@ -27,9 +27,7 @@ LiteMIL uses learnable query-based multi-head cross-attention to aggregate patch
 
 ### Prerequisites
 - **Python 3.13+**
-- **[uv](https://github.com/astral-sh/uv)** package manager (recommended) or pip
-
-### Option 1: Using uv (Recommended)
+- **[uv](https://github.com/astral-sh/uv)** package manager (recommended)
 
 ```bash
 # Install uv
@@ -47,29 +45,6 @@ source .venv/bin/activate  # Linux/macOS
 # or
 .venv\Scripts\activate     # Windows
 ```
-
-### Option 2: Using pip
-
-```bash
-# Core dependencies for training
-pip install torch torchvision
-pip install h5py pandas scikit-learn tqdm
-
-# Additional dependencies for WSI processing
-pip install openslide-bin openslide-python opencv-python matplotlib
-
-# For Phikon v2 backbone
-pip install transformers
-
-# For UNI backbone
-pip install timm huggingface_hub
-```
-
-### Verify Installation
-
-```bash
-python -c "import torch; import openslide; print('✓ Installation successful')"
-```
 ---
 
 ## 📊 Dataset Preparation
@@ -86,23 +61,9 @@ LiteMIL/
 │   ├── ...
 ```
 
-### Feature File Formats
+### Supported Feature File Formats
 
-**HDF5 (`.h5`):**
-```python
-import h5py
-with h5py.File('features.h5', 'r') as f:
-    features = f['features'][:]      # (N, 1024)
-    coords = f['coords'][:]          # (N, 2) - optional
-```
-
-**PyTorch (`.pt`, `.pth`):**
-```python
-import torch
-data = torch.load('features.pt')
-features = data['features']          # (N, 1024) tensor
-coords = data.get('coords', None)    # (N, 2) tensor - optional
-```
+HDF5 (`.h5`), PyTorch (`.pt`, `.pth`)
 ### Labels CSV Format
 
 Your `labels.csv` should contain:
@@ -157,18 +118,6 @@ Ground truth labels available in: [`datasets/<dataset>/labels.csv`](datasets/bre
 - Requires more memory
 - Better for small slides or models that need global context
 
-```python
-# Example
-from utils.mil_dataset import MILDataset
-
-dataset = MILDataset(
-    csv_path='datasets/breast/labels.csv',
-    features_dir='datasets/breast/features',
-    class_names=['IDC', 'ILC'],
-    mode='chunked',          # or 'full'
-    chunk_size=1000,
-)
-```
 ---
 ## 🔧 Model Configuration
 
@@ -197,7 +146,7 @@ model = LiteMIL(
 
 ---
 
-## 📈 Training with Nested Cross-Validation
+## 📈 Training on Pre-extracted Features with Nested Cross-Validation
 
 
 ```bash
@@ -377,10 +326,6 @@ This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENS
 
 - **TCGA Research Network** for providing datasets
 - **MAD-MIL study** for pre-extracted features ([Zenodo](https://zenodo.org/records/10563985))
-- **ResNet50**: [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385)
-- **Phikon v2**: [Owkin Foundation Model](https://huggingface.co/owkin/phikon-v2)
-- **UNI**: [Towards a General-Purpose Foundation Model for Computational Pathology](https://www.nature.com/articles/s41591-024-02857-3)
-- **OpenSlide**: [openslide.org](https://openslide.org/)
 
 ---
 
