@@ -2,7 +2,7 @@
 
 A lightweight transformer-style cross-attention MIL network for whole slide image classification achieving competitive performance with transformer-based methods while requiring fewer parameters, faster inference, and lower GPU memory.
 
-[![Paper](https://img.shields.io/badge/Paper-Journal%20of%20Medical%20Imaging-blue)](your-paper-link)
+[![Paper](https://img.shields.io/badge/Paper-Journal%20of%20Medical%20Imaging-blue)](https://doi.org/10.1117/1.JMI.13.1.017501)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)
 [![Python 3.13+](https://img.shields.io/badge/python-3.13+-blue.svg)](https://www.python.org/downloads/)
 ---
