@@ -216,10 +216,10 @@ Generate interpretable attention heatmaps:
 
 ```bash
 # Basic visualization
-python predict.py --visualize --mil LiteMIL --dataset breast --checkpoint outputs/LiteMIL/breast/all_folds_best.pth --input testSlides/testSlide.h5 --wsi testSlides/testSlide.svs --output heatmaps/
+python predict.py --visualize --mil LiteMIL --dataset breast --checkpoint outputs/LiteMIL/breast/all_folds_best.pth --input testSlides/testSlide.h5 --wsi testSlides/testSlide.svs --output outputs/heatmaps/
 
 # With custom parameters
-python predict.py --visualize --mil LiteMIL --dataset breast --checkpoint outputs/LiteMIL/breast/all_folds_best.pth --input testSlides/testSlide.h5 --wsi testSlides/testSlide.h5 --mode chunked --top_k 20 --cmap hot --output heatmaps/
+python predict.py --visualize --mil LiteMIL --dataset breast --checkpoint outputs/LiteMIL/breast/all_folds_best.pth --input testSlides/testSlide.h5 --wsi testSlides/testSlide.h5 --mode chunked --top_k 20 --cmap hot --output outputs/heatmaps/
 ```
 
 **Visualization Output:**
@@ -305,11 +305,15 @@ extractor = WSIFeatureExtractor(level=1)
 If you use LiteMIL pipeline in your research, please cite:
 
 ```bibtex
-@article{kussaibi2025litemil,
-  title={LiteMIL: A Computationally Efficient Cross-Attention MIL for Cancer Subtyping on WSIs},
-  author={Kussaibi, Haitham},
-  journal={Journal of Medical Imaging},
-  year={2025}
+@article{Kussaibi2026LiteMIL,
+title = {LiteMIL: a computationally efficient cross-attention multiple instance learning for cancer subtyping on whole-slide images},
+author = {Kussaibi, Haitham},
+journal = {Journal of Medical Imaging},
+year = {2026},
+volume = {13},
+number = {1},
+pages = {017501},
+doi = {10.1117/1.JMI.13.1.017501}
 }
 ```
 
